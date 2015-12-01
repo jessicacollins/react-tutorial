@@ -18,15 +18,29 @@
       // To get started with this tutorial running your own code, simply remove
       // the script tag loading scripts/example.js and start writing code here.
 
-      var Comment = React.createClass({
+      var CommentBox = React.createClass({
         render: function() {
           return (
-            <div className="comment">
-              <h2 className="commentAuthor">
-                {this.props.author}
-              </h2>
-              {this.props.childer}
+            <div className="commentBox">
+              <h1>Comments</h1>
+              <CommentList />
+              <CommentForm />
             </div>
+
+            );
+        }
+      });
+
+      ReactDOM.render(
+        <CommentBox />,
+        document.getElementById('content')
+        );
+
+      var CommentForm = React.createClass({
+        render: function() {
+          return (
+            <div className="commentForm">
+            Hello, world! I am a CommentForm.
             );
         }
       });
@@ -40,31 +54,19 @@
         }
       });
 
-      var CommentForm = React.createClass({
+      var Comment = React.createClass({
         render: function() {
           return (
-            <div className="commentForm">
-            Hello, world! I am a CommentForm.
-            );
-        }
-      });
-
-      var CommentBox = React.createClass({
-        render: function() {
-          return (
-            <div className="commentBox">
-              <h1>Comments</h1>
-              <CommentList />
-              <CommentForm />
+            <div className="comment">
+              <h2 className="commentAuthor">
+                {this.props.author}
+              </h2>
+              {this.props.childer}
             </div>
-
             );
         }
       });
-      ReactDOM.render(
-        <CommentBox />,
-        document.getElementById('content')
-        );
+
     </script>
   </body>
 </html>
